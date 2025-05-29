@@ -143,7 +143,6 @@ export default {
     isButtonDisabled() {
       const objectLength = Object.values(this.$props.value).length;
       if (objectLength === 1 && 'page' in this.$props.value) {
-        console.log(false);
         return true;
       }
       return !objectLength;

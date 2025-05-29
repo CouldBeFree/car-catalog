@@ -46,7 +46,6 @@ export default {
       this.$router.push({ query: { ...this.$route.query, page } });
     },
     handleFilterChange({ type, value }) {
-      console.log(type, value);
       if (!value && type === 'reset') {
         this.$router.push({ query: {} }).catch(err => {
           if (err.name !== 'NavigationDuplicated') {
