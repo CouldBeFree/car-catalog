@@ -6,9 +6,11 @@
       </router-link>
     </v-app-bar>
 
+    <v-main>
       <v-container>
         <router-view />
       </v-container>
+    </v-main>
 
     <v-footer app>
       <span>&copy; 2025</span>
