@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-row justify="start">
+    <v-row justify="start" class="pt-6">
       <v-col cols="12" align="start" v-if="car">
         <v-btn @click="$router.back()" color="primary">Go Back</v-btn>
       </v-col>
@@ -43,7 +43,7 @@
 </template>
 
 <script>
-import { mapGetters, mapActions } from 'vuex';
+import { mapGetters, mapActions, mapMutations } from 'vuex';
 
 export default {
   name: 'CarPage',
@@ -58,10 +58,14 @@ export default {
   },
   methods: {
     ...mapActions(['fetchCarById']),
+    ...mapMutations(['setCar']),
   },
   mounted() {
     this.fetchCarById(this.carId);
   },
+  beforeDestroy() {
+    this.setCar(null);
+  }
 };
 </script>
 
